@@ -7,10 +7,6 @@
     position: absolute;
 }
 
-#eyeshadeimg {
-    mix-blend-mode: multiply;
-}
-
 #selects {
     position: absolute;
     margin-top: 500px;
@@ -20,8 +16,12 @@
 
 
 
-#eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #eyeshadeimg, #skin, #lefteyeimg, #leftpupilimg {
+#eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #skinimg, #lefteyeimg, #leftpupilimg {
     z-index: 2;
+}
+
+#eyeshadeimg {
+    z-index: 3;
 }
 
 #name {

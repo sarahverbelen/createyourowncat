@@ -10,29 +10,36 @@ $(function () {
             console.log(style);
             $('#style').append(`<option value='${style}'>${style}</option>`);
         }
-        let style = $('#style').val();
 
+        // original loading
+        let style = $('#style').val();
         loadFullBase(style);
         fillMarkingSelect(json.styles[style].marks, 0);
 
 
-        //heterochromia standard hiding
-        $("#left").hide();
-        $("#lefteyeimg").hide();
-                $("#leftpupilimg").hide();
+
+        // load other style
+        $('#style').change(function () {
+            let style = $('#style').val();
+            loadFullBase(style);
+
+            $(".markingOption").remove();
+            fillMarkingSelect(json.styles[style].marks, 0);
+        });
+
+
+
+
 
         // Change style = load new markings, bases, etc
         $('#style').change(function () {
             style = $('#style').val();
 
             loadFullBase(style);
+            changeMark(style);
         });
 
-        // $(".marking").change(function() {
-        //     checkAllMarks(amountOfMarks, style);
-        // })
-
-        //checkAllMarks(amountOfMarks, style);
+        console.log(style);
         changeMark(style);
 
         $("#addMarking").click(function () {
@@ -153,6 +160,23 @@ function loadFullBase(style) {
     startColor('eyes');
     startColor('pupils');
     startColor('skin');
+
+    let heterochromia = $("#heterochromia").prop("checked");
+            //console.log(heterochromia);
+            if (heterochromia) {
+                $("#left").show();
+                $("#righteye").text("Right Eye Base");
+                $("#rightpupil").text("Right Pupil");
+
+                $("#lefteyeimg").show();
+                $("#leftpupilimg").show();
+            } else {
+                $("#left").hide();
+                $("#righteye").text("Eyes Base");
+                $("#rightpupil").text("Pupils");
+                $("#lefteyeimg").hide();
+                $("#leftpupilimg").hide();
+            }
 }
 
 function changeColor(part) {
@@ -169,7 +193,7 @@ function changeColor(part) {
 }
 
 function changeMarkingColor(mark) {
-    console.log(mark);
+    //console.log(mark);
     $(`#${mark}color`).change(function () {
         let rgb = hexToRgb($(`#${mark}color`).val());
 
@@ -216,7 +240,7 @@ function fillMarkingSelect(markings, index) {
     for (mark in markings) {
         let marking = markings[mark];
         let markingName = marking.split('.')[0];
-        $(`#mark${index}`).append(`<option value='${marking}'>${markingName}</option>`)
+        $(`#mark${index}`).append(`<option value='${marking}' class="markingOption">${markingName}</option>`)
     }
 
 }

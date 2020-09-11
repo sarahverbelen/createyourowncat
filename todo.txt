@@ -2,3 +2,4 @@
 - randomizer
 - verslepen van markings
 - mobile-friendly maken
+- markings houden?
