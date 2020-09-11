@@ -25,6 +25,13 @@ $(function () {
 
             $(".markingOption").remove();
             fillMarkingSelect(json.styles[style].marks, 0);
+
+            for(let i = 1; i < amountOfMarks; i++) {
+                $(`#mark${i}`).remove();
+                $(`#mark${i}color`).remove();
+                $(`#${i}`).remove();
+                $(`#mark${i}label`).remove();
+            }
         });
 
 
@@ -127,7 +134,7 @@ function addMarkingField(index, markings) {
         </select>
         <input type="color" id="mark${index}color" name="mark${index}" value="#ffffff">
         <input type="range" min="1" max="100" value="100" class="slider" id="${index}">
-        <label for="mark${index}color">Marking ${index + 1}</label> <br></br>`
+        <label for="mark${index}color" id="mark${index}label">Marking ${index + 1}</label> <br></br>`
     );
 
     fillMarkingSelect(markings, index);
