@@ -1,8 +1,7 @@
 {
     "styles": {
         "babs": {
-            "base": "base.png",
-            "lines": "lines.png"
+            "marks": ["back.png", "heavy tabby.png", "pointoverlay.png", "backmittens.png", "underside face.png", "blaze.png", "muzzle.png", "pointoverlay.png", "sideburns.png"]
         }
 }
 }

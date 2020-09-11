@@ -11,6 +11,7 @@ $(function () {
         let style = $('#style').val();
 
         loadFullBase(style);
+        fillMarkingSelect(json.styles[style].marks, 0);
 
         // Change style = load new markings, bases, etc
         $('#style').change(function () {
@@ -18,19 +19,21 @@ $(function () {
 
             loadFullBase(style);
         });
+
+        $("#mark0").change(function() {
+            addMarkingImage(style, $("#mark0").val(), 0);
+            startMarkingColor('mark0');
+        });
+        changeMarkingColor('mark0');
     });
 
-    $('#base').change(function () {
-        let rgb = hexToRgb($('#base').val());
+    changeColor('base');
+    changeColor('ears');
+    changeColor('fluff');
+    changeColor('eyes');
+    changeColor('pupils');
+    changeColor('skin');
 
-        const color = new Color(rgb[0], rgb[1], rgb[2]);
-        const solver = new Solver(color);
-        const result = solver.solve();
-
-        // $("#baseimg").attr('style', 'filter: brightness(0%) saturate(100%)');
-        $("#baseimg").attr('style', result.filter);
-
-    });
 
 });
 
@@ -43,7 +46,6 @@ function appendImage(style, image) {
 
 function loadFullBase(style) {
     appendImage(style, 'base');
-    // changeColor(style, 'base');
     appendImage(style, 'ears');
     appendImage(style, 'eyes');
     appendImage(style, 'pupils');
@@ -51,38 +53,93 @@ function loadFullBase(style) {
     appendImage(style, 'fluff');
     appendImage(style, 'skin');
     appendImage(style, 'lines');
+
+    startColor('base');
+    startColor('ears');
+    startColor('fluff');
+    startColor('eyes');
+    startColor('pupils');
+    startColor('skin');
+}
+
+function changeColor(part) {
+    $(`#${part}`).change(function () {
+        let rgb = hexToRgb($(`#${part}`).val());
+
+        const color = new Color(rgb[0], rgb[1], rgb[2]);
+        const solver = new Solver(color);
+        const result = solver.solve();
+
+        $(`#${part}img`).attr('style', result.filter);
+
+    });
+}
+
+function changeMarkingColor(mark) {
+    $(`#${mark}color`).change(function () {
+        let rgb = hexToRgb($(`#${mark}color`).val());
+
+        const color = new Color(rgb[0], rgb[1], rgb[2]);
+        const solver = new Solver(color);
+        const result = solver.solve();
+
+        $(`#${mark}img`).attr('style', result.filter);
+
+    });
+}
+
+function startMarkingColor(mark) {
+    let rgb = hexToRgb($(`#${mark}color`).val());
+
+        const color = new Color(rgb[0], rgb[1], rgb[2]);
+        const solver = new Solver(color);
+        const result = solver.solve();
+
+        $(`#${mark}img`).attr('style', result.filter);
+}
+
+function startColor(part) {
+        let rgb = hexToRgb($(`#${part}`).val());
+
+        const color = new Color(rgb[0], rgb[1], rgb[2]);
+        const solver = new Solver(color);
+        const result = solver.solve();
+
+        $(`#${part}img`).attr('style', result.filter);
+}
+
+function addMarkingImage(style, marking, index) {
+    $(`#mark${index}img`).remove();
+    if(marking != 'none') {
+        $("#cat").append(
+            `<img src='art/${style}/markings/${marking}' id='mark${index}img' class='baseimage'>`
+        )
+    }
+}
+
+function fillMarkingSelect(markings, index) {
+    for(mark in markings){
+        let marking = markings[mark];
+        let markingName = marking.split('.')[0];
+        $(`#mark${index}`).append(`<option value='${marking}'>${markingName}</option>`)
+    }
+   
 }
 
 
-// $(document).ready(() => {
-//     $('button.execute').click(() => {
-//       const rgb = hexToRgb($('input.target').val());
-//       if (rgb.length !== 3) {
-//         alert('Invalid format!');
-//         return;
-//       }
 
-//       const color = new Color(rgb[0], rgb[1], rgb[2]);
-//       const solver = new Solver(color);
-//       const result = solver.solve();
 
-//       let lossMsg;
-//       if (result.loss < 1) {
-//         lossMsg = 'This is a perfect result.';
-//       } else if (result.loss < 5) {
-//         lossMsg = 'The is close enough.';
-//       } else if (result.loss < 15) {
-//         lossMsg = 'The color is somewhat off. Consider running it again.';
-//       } else {
-//         lossMsg = 'The color is extremely off. Run it again!';
-//       }
 
-//       $('.realPixel').css('background-color', color.toString());
-//       $('.filterPixel').attr('style', result.filter);
-//       $('.filterDetail').text(result.filter);
-//       $('.lossDetail').html(`Loss: ${result.loss.toFixed(1)}. <b>${lossMsg}</b>`);
-//     });
-//   });
+
+
+
+
+
+
+
+
+
+
 
 
 // CODE BELOW BY https://codepen.io/sosuke/pen/Pjoqqp
