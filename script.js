@@ -66,17 +66,21 @@ function checkAllMarks (amountOfMarks, style) {
 }
 
 function changeMark (style) {
+    let opacity; 
     $(".marking").change(function(obj) {
         let mark = obj.currentTarget.id;
 
         addMarkingImage(style, $(`#${mark}`).val(), mark);
-
+        startMarkingColor(mark);
+        changeMarkingColor(mark);
+        $(mark + 'img').css('opacity', opacity);
     });
 
+    
 
     $(`.slider`).change(function(obj) {
         let id = obj.currentTarget.id
-        let opacity = $(`#${id}`).val() / 100
+        opacity = $(`#${id}`).val() / 100
         $(`#mark${id}img`).css('opacity', opacity);
     });
 }
