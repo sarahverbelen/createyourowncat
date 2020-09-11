@@ -20,3 +20,9 @@
 #eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #eyeshadeimg, #skin, #lefteyeimg, #leftpupilimg {
     z-index: 2;
 }
+
+#name {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 70px;
+}

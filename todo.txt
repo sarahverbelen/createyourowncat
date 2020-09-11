@@ -1,3 +1,4 @@
 - heterochromia
 - randomizer
 - verslepen van markings
+- mobile-friendly maken
