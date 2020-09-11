@@ -1,7 +1,10 @@
 {
     "styles": {
         "babs": {
-            "marks": ["back.png", "heavy tabby.png", "pointoverlay.png", "backmittens.png", "underside face.png", "blaze.png", "muzzle.png", "pointoverlay.png", "sideburns.png", "socks back.png", "socks front.png", "dorsal stripe.png", "hindquarters.png", "ticked tabby.png", "undersides tabby.png", "face and neck.png", "bicolor.png", "siamese point.png", "lynx point.png", "tabby (painterly).png", "unders.png", "mackarel tabby.png", "underfeet.png", "alternative unders.png", "calico.png", "chest high.png", "chest half.png", "belly high.png", "belly half.png", "tailtip.png", "front mittens.png", "cap and saddle.png", "star.png", "locket.png", "bengal.png", "bengal underspots.png", "tortie.png", "tortie big.png", "eyeliner.png", "small mask.png", "eyebrows.png", "eartips.png", "ears.png", "muzzle (side).png", "tail rings.png", "chin.png", "cape.png", "tipped.png", "freckles.png", "sickle.png", "deerspots.png", "nosebridge.png", "smoke.png", "tail.png", "beautymark.png", "spotted tabby.png", "fading tabby", "classic tabby"]
+            "marks": ["back.png", "heavy tabby.png", "pointoverlay.png", "backmittens.png", "underside face.png", "blaze.png", "muzzle.png", "pointoverlay.png", "sideburns.png", "socks back.png", "socks front.png", "dorsal stripe.png", "hindquarters.png", "ticked tabby.png", "undersides tabby.png", "face and neck.png", "bicolor.png", "siamese point.png", "lynx point.png", "tabby (painterly).png", "unders.png", "mackarel tabby.png", "underfeet.png", "alternative unders.png", "calico.png", "chest high.png", "chest half.png", "belly high.png", "belly half.png", "tailtip.png", "front mittens.png", "cap and saddle.png", "star.png", "locket.png", "bengal.png", "bengal underspots.png", "tortie.png", "tortie big.png", "eyeliner.png", "small mask.png", "eyebrows.png", "eartips.png", "ears.png", "muzzle (side).png", "tail rings.png", "chin.png", "cape.png", "tipped.png", "freckles.png", "sickle.png", "deerspots.png", "nosebridge.png", "smoke.png", "tail.png", "beautymark.png", "spotted tabby.png", "fading tabby.png", "classic tabby.png", "tail underside.png", "tail under high.png"]
+        },
+        "ema": {
+            "marks": [" "]
         }
 }
 }

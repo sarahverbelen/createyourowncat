@@ -7,6 +7,7 @@ $(function () {
         //fill the dropdowns
         //STYLE
         for (let style in json.styles) {
+            console.log(style);
             $('#style').append(`<option value='${style}'>${style}</option>`);
         }
         let style = $('#style').val();

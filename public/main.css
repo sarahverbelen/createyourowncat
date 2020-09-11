@@ -15,7 +15,10 @@
     position: absolute;
     margin-top: 500px;
     margin-left: 50px;
+    z-index: 2;
 }
+
+
 
 #eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #eyeshadeimg, #skin, #lefteyeimg, #leftpupilimg {
     z-index: 2;
