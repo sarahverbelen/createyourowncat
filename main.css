@@ -1,0 +1,23 @@
+#cat {
+    width: 700px;
+}
+
+#cat img {
+    width: 700px;
+    position: absolute;
+}
+
+#eyeshadeimg {
+    mix-blend-mode: multiply;
+}
+
+.baseimage {
+    /* filter: grayscale(100%); */
+    /* filter: brightness(0) saturate(100%); */
+}
+
+#selects {
+    position: absolute;
+    margin-top: 500px;
+    margin-left: 50px;
+}

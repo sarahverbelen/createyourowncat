@@ -1,0 +1,8 @@
+{
+    "styles": {
+        "babs": {
+            "base": "base.png",
+            "lines": "lines.png"
+        }
+}
+}
