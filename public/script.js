@@ -14,6 +14,12 @@ $(function () {
         loadFullBase(style);
         fillMarkingSelect(json.styles[style].marks, 0);
 
+
+        //heterochromia standard hiding
+        $("#left").hide();
+        $("#lefteyeimg").hide();
+                $("#leftpupilimg").hide();
+
         // Change style = load new markings, bases, etc
         $('#style').change(function () {
             style = $('#style').val();
@@ -28,31 +34,52 @@ $(function () {
         //checkAllMarks(amountOfMarks, style);
         changeMark(style);
 
-        $("#addMarking").click(function() {
+        $("#addMarking").click(function () {
             amountOfMarks++;
             addMarkingField(amountOfMarks - 1, json.styles[style].marks);
             changeMark(style);
             // checkAllMarks(amountOfMarks, style);
         });
 
-        
+        $("#heterochromia").change(function () {
+            let heterochromia = $("#heterochromia").prop("checked");
+            console.log(heterochromia);
+            if (heterochromia) {
+                $("#left").show();
+                $("#righteye").text("Right Eye Base");
+                $("#rightpupil").text("Right Pupil");
+
+                $("#lefteyeimg").show();
+                $("#leftpupilimg").show();
+            } else {
+                $("#left").hide();
+                $("#righteye").text("Eyes Base");
+                $("#rightpupil").text("Pupils");
+                $("#lefteyeimg").hide();
+                $("#leftpupilimg").hide();
+            }
+        })
+
+
     });
 
     changeColor('base');
     changeColor('ears');
     changeColor('fluff');
     changeColor('eyes');
+    changeColor('lefteye');
     changeColor('pupils');
+    changeColor('leftpupil')
     changeColor('skin');
 
 
 });
 
-function checkAllMarks (amountOfMarks, style) {
-    for(i = 0; i < amountOfMarks; i++) {
+function checkAllMarks(amountOfMarks, style) {
+    for (i = 0; i < amountOfMarks; i++) {
         let markId = `#mark${i}`;
 
-        $(markId).change(function() {
+        $(markId).change(function () {
             addMarkingImage(style, $(markId).val(), i);
             startMarkingColor(`mark${i + 1}`);
             let opacity = $(`${i}`).val() / 100
@@ -62,12 +89,12 @@ function checkAllMarks (amountOfMarks, style) {
     }
 
 
-    
+
 }
 
-function changeMark (style) {
-    let opacity; 
-    $(".marking").change(function(obj) {
+function changeMark(style) {
+    let opacity;
+    $(".marking").change(function (obj) {
         let mark = obj.currentTarget.id;
 
         addMarkingImage(style, $(`#${mark}`).val(), mark);
@@ -76,9 +103,9 @@ function changeMark (style) {
         $(mark + 'img').css('opacity', opacity);
     });
 
-    
 
-    $(`.slider`).change(function(obj) {
+
+    $(`.slider`).change(function (obj) {
         let id = obj.currentTarget.id
         opacity = $(`#${id}`).val() / 100
         $(`#mark${id}img`).css('opacity', opacity);
@@ -112,6 +139,8 @@ function loadFullBase(style) {
     appendImage(style, 'ears');
     appendImage(style, 'eyes');
     appendImage(style, 'pupils');
+    appendImage(style, 'lefteye');
+    appendImage(style, 'leftpupil');
     appendImage(style, 'eyeshade');
     appendImage(style, 'fluff');
     appendImage(style, 'skin');
@@ -156,26 +185,26 @@ function startMarkingColor(mark) {
     // console.log(mark);
     let rgb = hexToRgb($(`#${mark}color`).val());
 
-        const color = new Color(rgb[0], rgb[1], rgb[2]);
-        const solver = new Solver(color);
-        const result = solver.solve();
+    const color = new Color(rgb[0], rgb[1], rgb[2]);
+    const solver = new Solver(color);
+    const result = solver.solve();
 
-        $(`#${mark}img`).attr('style', result.filter);
+    $(`#${mark}img`).attr('style', result.filter);
 }
 
 function startColor(part) {
-        let rgb = hexToRgb($(`#${part}`).val());
+    let rgb = hexToRgb($(`#${part}`).val());
 
-        const color = new Color(rgb[0], rgb[1], rgb[2]);
-        const solver = new Solver(color);
-        const result = solver.solve();
+    const color = new Color(rgb[0], rgb[1], rgb[2]);
+    const solver = new Solver(color);
+    const result = solver.solve();
 
-        $(`#${part}img`).attr('style', result.filter);
+    $(`#${part}img`).attr('style', result.filter);
 }
 
 function addMarkingImage(style, marking, index) {
     $(`#${index}img`).remove();
-    if(marking != 'none') {
+    if (marking != 'none') {
         $("#cat").append(
             `<img src='art/${style}/markings/${marking}' id='${index}img' class='baseimage'>`
         )
@@ -183,12 +212,12 @@ function addMarkingImage(style, marking, index) {
 }
 
 function fillMarkingSelect(markings, index) {
-    for(mark in markings){
+    for (mark in markings) {
         let marking = markings[mark];
         let markingName = marking.split('.')[0];
         $(`#mark${index}`).append(`<option value='${marking}'>${markingName}</option>`)
     }
-   
+
 }
 
 
@@ -498,8 +527,7 @@ function hexToRgb(hex) {
     });
 
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ?
-        [
+    return result ? [
             parseInt(result[1], 16),
             parseInt(result[2], 16),
             parseInt(result[3], 16),

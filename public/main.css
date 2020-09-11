@@ -17,6 +17,6 @@
     margin-left: 50px;
 }
 
-#eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #eyeshadeimg {
+#eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #eyeshadeimg, #skin, #lefteyeimg, #leftpupilimg {
     z-index: 2;
 }
