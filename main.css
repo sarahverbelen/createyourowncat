@@ -11,17 +11,12 @@
     mix-blend-mode: multiply;
 }
 
-.baseimage {
-    /* filter: grayscale(100%); */
-    /* filter: brightness(0) saturate(100%); */
-}
-
 #selects {
     position: absolute;
     margin-top: 500px;
     margin-left: 50px;
 }
 
-#eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg {
+#eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #eyeshadeimg {
     z-index: 2;
 }

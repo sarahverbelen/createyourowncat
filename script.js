@@ -1,4 +1,5 @@
 $(function () {
+    let amountOfMarks = 1;
 
     $.getJSON("art.json", function (json) {
         console.log(json);
@@ -20,11 +21,21 @@ $(function () {
             loadFullBase(style);
         });
 
-        $("#mark0").change(function() {
-            addMarkingImage(style, $("#mark0").val(), 0);
-            startMarkingColor('mark0');
+        // $(".marking").change(function() {
+        //     checkAllMarks(amountOfMarks, style);
+        // })
+
+        //checkAllMarks(amountOfMarks, style);
+        changeMark(style);
+
+        $("#addMarking").click(function() {
+            amountOfMarks++;
+            addMarkingField(amountOfMarks - 1, json.styles[style].marks);
+            changeMark(style);
+            // checkAllMarks(amountOfMarks, style);
         });
-        changeMarkingColor('mark0');
+
+        
     });
 
     changeColor('base');
@@ -36,6 +47,54 @@ $(function () {
 
 
 });
+
+function checkAllMarks (amountOfMarks, style) {
+    for(i = 0; i < amountOfMarks; i++) {
+        let markId = `#mark${i}`;
+
+        $(markId).change(function() {
+            addMarkingImage(style, $(markId).val(), i);
+            startMarkingColor(`mark${i + 1}`);
+            let opacity = $(`${i}`).val() / 100
+            $(`#mark${i}img`).css('opacity', opacity);
+        });
+        changeMarkingColor(`mark${i}`);
+    }
+
+
+    
+}
+
+function changeMark (style) {
+    $(".marking").change(function(obj) {
+        let mark = obj.currentTarget.id;
+
+        addMarkingImage(style, $(`#${mark}`).val(), mark);
+
+    });
+
+
+    $(`.slider`).change(function(obj) {
+        let id = obj.currentTarget.id
+        let opacity = $(`#${id}`).val() / 100
+        $(`#mark${id}img`).css('opacity', opacity);
+    });
+}
+
+function addMarkingField(index, markings) {
+    $(".markings").append(
+        `<select name="marking${index}" id="mark${index}" class="marking">
+            <option value="none">     </option>
+        </select>
+        <input type="color" id="mark${index}color" name="mark${index}" value="#ffffff">
+        <input type="range" min="1" max="100" value="100" class="slider" id="${index}">
+        <label for="mark${index}color">Marking ${index + 1}</label> <br></br>`
+    );
+
+    fillMarkingSelect(markings, index);
+
+
+}
 
 function appendImage(style, image) {
     $(`#${image}img`).remove();
@@ -76,6 +135,7 @@ function changeColor(part) {
 }
 
 function changeMarkingColor(mark) {
+    console.log(mark);
     $(`#${mark}color`).change(function () {
         let rgb = hexToRgb($(`#${mark}color`).val());
 
@@ -89,6 +149,7 @@ function changeMarkingColor(mark) {
 }
 
 function startMarkingColor(mark) {
+    // console.log(mark);
     let rgb = hexToRgb($(`#${mark}color`).val());
 
         const color = new Color(rgb[0], rgb[1], rgb[2]);
@@ -109,10 +170,10 @@ function startColor(part) {
 }
 
 function addMarkingImage(style, marking, index) {
-    $(`#mark${index}img`).remove();
+    $(`#${index}img`).remove();
     if(marking != 'none') {
         $("#cat").append(
-            `<img src='art/${style}/markings/${marking}' id='mark${index}img' class='baseimage'>`
+            `<img src='art/${style}/markings/${marking}' id='${index}img' class='baseimage'>`
         )
     }
 }

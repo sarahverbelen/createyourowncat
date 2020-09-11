@@ -27,12 +27,18 @@
         <label for="fluff">Pupils</label> <br>
         <input type="color" id="skin" name="skin" value="#ffffff">
         <label for="fluff">Skin</label> <br>
-
+        <br>
+        <h3>Markings</h3>
+        <div class="markings">
         <select name="marking0" id="mark0" class="marking">
             <option value="none">     </option>
         </select>
-        <input type="color" id="mark0color" name="mark0" value="#ffffff">
+        <input type="color" id="mark0color" name="mark0" value="#ffffff" class='markingcolor'>
+        <input type="range" min="1" max="100" value="100" class="slider" id="0">
         <label for="mark0color">Marking 1</label> <br>
+        <br>
+    </div>
+        <button id="addMarking">Add Marking</button>
     </div>
 </body>
 
