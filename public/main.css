@@ -29,10 +29,25 @@
     z-index: 202;
 }
 
+#collarimg, #collarlinesimg, #collarthingimg, #bellimg, #belllinesimg {
+    z-index: 203;
+}
+
+.dogteethimg {
+    z-index: 204;
+}
+
 #name {
     position: absolute;
     margin-left: 700px;
     margin-top: 70px;
+}
+
+.column {
+    display: inline-block;
+    width: 250px;
+    margin-left: 20px;
+    vertical-align: top;
 }
 
 #mark0img {

@@ -8,7 +8,6 @@ $(function () {
         //fill the dropdowns
         //STYLE
         for (let style in json.styles) {
-            console.log(style);
             $('#style').append(`<option value='${style}'>${style}</option>`);
         }
 
@@ -30,7 +29,7 @@ $(function () {
             fillMarkingSelect(json.styles[style].marks, 0);
             fillScarSelect(json.styles[style].scars, 0);
 
-            for(let i = 1; i < amountOfMarks; i++) {
+            for (let i = 1; i < amountOfMarks; i++) {
                 $(`#mark${i}`).remove();
                 $(`#mark${i}color`).remove();
                 $(`#${i}`).remove();
@@ -38,7 +37,7 @@ $(function () {
             }
             amountOfMarks = 1;
 
-            for(let i = 1; i < amountOfScars; i++) {
+            for (let i = 1; i < amountOfScars; i++) {
                 $(`#scar${i}`).remove();
                 $(`#scar${i}label`).remove();
             }
@@ -78,24 +77,15 @@ $(function () {
             // checkAllMarks(amountOfMarks, style);
         });
 
+        // HETEROCHROMIA
         $("#heterochromia").change(function () {
-            let heterochromia = $("#heterochromia").prop("checked");
-            console.log(heterochromia);
-            if (heterochromia) {
-                $("#left").show();
-                $("#righteye").text("Right Eye Base");
-                $("#rightpupil").text("Right Pupil");
+            heterochromia();
+        });
 
-                $("#lefteyeimg").show();
-                $("#leftpupilimg").show();
-            } else {
-                $("#left").hide();
-                $("#righteye").text("Eyes Base");
-                $("#rightpupil").text("Pupils");
-                $("#lefteyeimg").hide();
-                $("#leftpupilimg").hide();
-            }
-        })
+        // COLLARS
+        $("#collarShow").change(function () {
+            collar();
+        });
 
 
     });
@@ -108,6 +98,9 @@ $(function () {
     changeColor('pupils');
     changeColor('leftpupil')
     changeColor('skin');
+
+    changeColor('collar');
+    changeColor('bell');
 
 
 });
@@ -133,7 +126,7 @@ function checkAllScars(amountOfScars, style) {
 
         $(scarId).change(function () {
             addScarImage(style, $(scarId).val(), i);
-            
+
         });
 
     }
@@ -216,6 +209,12 @@ function loadFullBase(style) {
     appendImage(style, 'skin');
     appendImage(style, 'lines');
 
+    appendImage(style, 'collar');
+    appendImage(style, 'collarlines');
+    appendImage(style, 'collarthing');
+    appendImage(style, 'bell');
+    appendImage(style, 'belllines');
+
     startColor('base');
     startColor('ears');
     startColor('fluff');
@@ -223,22 +222,103 @@ function loadFullBase(style) {
     startColor('pupils');
     startColor('skin');
 
-    let heterochromia = $("#heterochromia").prop("checked");
-            //console.log(heterochromia);
-            if (heterochromia) {
-                $("#left").show();
-                $("#righteye").text("Right Eye Base");
-                $("#rightpupil").text("Right Pupil");
+    startColor('collar');
+    startColor('bell');
 
-                $("#lefteyeimg").show();
-                $("#leftpupilimg").show();
-            } else {
-                $("#left").hide();
-                $("#righteye").text("Eyes Base");
-                $("#rightpupil").text("Pupils");
-                $("#lefteyeimg").hide();
-                $("#leftpupilimg").hide();
-            }
+    heterochromia();
+    collar();
+
+
+}
+
+function collar() {
+    let collar = $("#collarShow").prop("checked");
+
+    if (collar) {
+        $(".collar").show();
+
+        $("#collarimg").show();
+        $("#collarlinesimg").show();
+        $("#collarthingimg").show();
+
+        showBell();
+
+        $("#bellShow").change(function () {
+            showBell();
+        });
+
+        showDogTeeth();
+
+        $("#teeth").change(function () {
+            showDogTeeth();
+        });
+
+
+    } else {
+        $(".collar").hide();
+
+        $("#collarimg").hide();
+        $("#collarlinesimg").hide();
+        $("#collarthingimg").hide();
+        $("#bellimg").hide();
+        $("#belllinesimg").hide();
+
+        $(".dogteethimg").hide();
+    }
+
+}
+
+function showDogTeeth() {
+    $(".dogteethimg").remove();
+    let dogteeth = $("#teeth").val();
+    if (dogteeth != '' && dogteeth != 0) {
+        console.log(dogteeth);
+        for(i = 1; i <= dogteeth; i++) {
+            addDogTeeth(i);
+        }
+
+    }
+
+}
+
+function showBell() {
+    let bell = $("#bellShow").prop("checked");
+    if (bell) {
+        $(".bell").show();
+        $("#bellimg").show();
+        $("#belllinesimg").show();
+    } else {
+        $(".bell").hide();
+        $("#bellimg").hide();
+        $("#belllinesimg").hide();
+    }
+}
+
+function heterochromia() {
+    let heterochromia = $("#heterochromia").prop("checked");
+    if (heterochromia) {
+        $("#left").show();
+        $("#righteye").text("Right Eye Base");
+        $("#rightpupil").text("Right Pupil");
+
+        $("#lefteyeimg").show();
+        $("#leftpupilimg").show();
+    } else {
+        $("#left").hide();
+        $("#righteye").text("Eyes Base");
+        $("#rightpupil").text("Pupils");
+        $("#lefteyeimg").hide();
+        $("#leftpupilimg").hide();
+    }
+}
+
+function addDogTeeth(number) {
+    let style = $("#style").val();
+
+    $(`#teeth${number}`).remove();
+    $("#cat").append(
+        `<img src='art/${style}/dogteeth/${number}.png' id='teeth${number}' class='baseimage dogteethimg'>`
+    )
 }
 
 function changeColor(part) {
