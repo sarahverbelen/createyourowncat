@@ -1,52 +1,12 @@
-- heterochromia
 - randomizer
 - verslepen van markings
 - mobile-friendly maken
-- markings houden?
+- markings houden bij switchen tussen bases???
 
 
 
-markings die ik wil tekenen:
-- saddle v
-- waistband v
-- back v
-- low belly v
-- high belly v
-- low chest v
-- high chest v
-- underside tail v
-- underside paws v
-- bengal v
-- bengal underspots v
-- muzzle vv
-- chin v
-- splitface (left) v
-- splitface (right) v
-- eyespot (left) v
-- eyespot (right) v
-- left frontpaw v
-- right frontpaw v
-- left backpaw v
-- right backpaw v
-- tail v
-- half tail v
-- tailtip v
-- small chest spot v
-- big chest spot v
-- small forehead spot v
-- big forehead spot v
-- left ear v
-- right ear v 
-- spots small v
-- spots medium v
-- spots big v
-- dorsal stripe v
-- nosebridge v
-- neckband v
-- eyeshadow (top) v
-- eyeshadow (bottom) v
-- sideburns v
 
+markings voor mijn base:
 - freckles 
 - butt freckles
 - frontpaw freckles
@@ -57,3 +17,36 @@ markings die ik wil tekenen:
 - tabby big
 - point
 - point overlay
+
++ Halsband met 5 hondentanden + bel 
++ littekens:
+- eye left
+- eye right
+- left torn ear
+- right torn ear
+- shoulder
+- back
+- back leg
+- backpaw right
+- backfoot right
+- backfoot left
+- backpaw left
+- frontpaw left
+- frontfoot left
+- frontfoot right
+- frontpaw right
+- tail front
+- tail middle
+- tail end
+- clipped tail
+- clipped ear left
+- clipped ear right
+- burned face left
+- burned face right
+- burned back
+- burned shoulder
+- burned backleg
+- burned tail
+- nosebridge
+- chest
+- belly
