@@ -18,15 +18,79 @@
 
 
 #eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #skinimg, #lefteyeimg, #leftpupilimg {
-    z-index: 2;
+    z-index: 200;
 }
 
 #eyeshadeimg {
-    z-index: 3;
+    z-index: 201;
 }
 
 #name {
     position: absolute;
     margin-left: 700px;
     margin-top: 70px;
+}
+
+#mark0img {
+    z-index: 1;
+}
+#mark1img {
+    z-index: 2;
+}
+#mark2img {
+    z-index: 3;
+}
+#mark3img {
+    z-index: 4;
+}
+#mark4img {
+    z-index: 5;
+}
+#mark5img {
+    z-index: 6;
+}
+#mark6img {
+    z-index: 7;
+}
+#mark7img {
+    z-index: 8;
+}
+#mark8img {
+    z-index: 9;
+}
+#mark9img {
+    z-index: 10;
+}
+#mark10img {
+    z-index: 11;
+}
+#mark11img {
+    z-index: 12;
+}
+#mark12img {
+    z-index: 13;
+}
+#mark13img {
+    z-index: 14;
+}
+#mark14img {
+    z-index: 15;
+}
+#mark15img {
+    z-index: 16;
+}
+#mark16img {
+    z-index: 17;
+}
+#mark17img {
+    z-index: 18;
+}
+#mark18img {
+    z-index: 19;
+}
+#mark19img {
+    z-index: 20;
+}
+#mark20img {
+    z-index: 21;
 }
