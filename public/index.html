@@ -15,7 +15,7 @@
     <h1>Create Your Own Cat!</h1>
     <h2 id="name">Twinklefoot</h2>
     <div id="cat"></div>
-    
+
     <div id="selects">
         <button id="nameGenerator">Generate Name</button> <br> <br>
         <select name="style" id="style"></select>
@@ -28,14 +28,14 @@
         <label for="fluff">Ear Fluff</label> <br>
         <input type="color" id="skin" name="skin" value="#ffffff">
         <label for="skin">Skin</label> <br>
-        <br> 
+        <br>
         <input type="checkbox" id="heterochromia"> <label for="heterochromia">Heterochromia</label> <br>
         <div id="left">
-        <input type="color" id="lefteye" name="lefteye" value="#ffffff">
-        <label for="lefteye">Left Eye Base</label> <br>
-        <input type="color" id="leftpupil" name="leftpupil" value="#ffffff">
-        <label for="leftpupil">Left Pupil</label> <br>
-    </div>
+            <input type="color" id="lefteye" name="lefteye" value="#ffffff">
+            <label for="lefteye">Left Eye Base</label> <br>
+            <input type="color" id="leftpupil" name="leftpupil" value="#ffffff">
+            <label for="leftpupil">Left Pupil</label> <br>
+        </div>
         <input type="color" id="eyes" name="eyes" value="#ffffff">
         <label for="eyes" id="righteye">Eyes Base</label> <br>
         <input type="color" id="pupils" name="pupils" value="#ffffff">
@@ -43,15 +43,27 @@
         <br>
         <h3>Markings</h3>
         <div class="markings">
-        <select name="marking0" id="mark0" class="marking">
-            <option value="none">     </option>
-        </select>
-        <input type="color" id="mark0color" name="mark0" value="#ffffff" class='markingcolor'>
-        <input type="range" min="1" max="100" value="100" class="slider" id="0">
-        <label for="mark0color" id="mark0label">Marking 1</label> <br>
-        <br>
-    </div>
+            <select name="marking0" id="mark0" class="marking">
+                <option value="none"> </option>
+            </select>
+            <input type="color" id="mark0color" name="mark0" value="#ffffff" class='markingcolor'>
+            <input type="range" min="1" max="100" value="100" class="slider" id="0">
+            <label for="mark0color" id="mark0label">Marking 1</label> <br>
+            <br>
+        </div>
         <button id="addMarking">Add Marking</button>
+
+        <h3>Scars</h3>
+        <div class="scars">
+            <select name="scar0" id="scar0" class="scar">
+                <option value="none"> </option>
+            </select>
+            <!-- <input type="color" id="mark0color" name="mark0" value="#ffffff" class='markingcolor'>
+        <input type="range" min="1" max="100" value="100" class="slider" id="0"> -->
+            <label for="scar0" id="scar0label">Scar 1</label> <br>
+            <br>
+        </div>
+        <button id="addScar">Add scar</button>
     </div>
 </body>
 

@@ -25,6 +25,10 @@
     z-index: 201;
 }
 
+.scarimage {
+    z-index: 202;
+}
+
 #name {
     position: absolute;
     margin-left: 700px;

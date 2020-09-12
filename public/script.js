@@ -1,5 +1,6 @@
 $(function () {
     let amountOfMarks = 1;
+    let amountOfScars = 1;
 
     $.getJSON("art.json", function (json) {
         console.log(json);
@@ -15,6 +16,7 @@ $(function () {
         let style = $('#style').val();
         loadFullBase(style);
         fillMarkingSelect(json.styles[style].marks, 0);
+        fillScarSelect(json.styles[style].scars, 0);
 
 
 
@@ -24,7 +26,9 @@ $(function () {
             loadFullBase(style);
 
             $(".markingOption").remove();
+            $(".scarOption").remove();
             fillMarkingSelect(json.styles[style].marks, 0);
+            fillScarSelect(json.styles[style].scars, 0);
 
             for(let i = 1; i < amountOfMarks; i++) {
                 $(`#mark${i}`).remove();
@@ -32,6 +36,16 @@ $(function () {
                 $(`#${i}`).remove();
                 $(`#mark${i}label`).remove();
             }
+            amountOfMarks = 1;
+
+            for(let i = 1; i < amountOfScars; i++) {
+                $(`#scar${i}`).remove();
+                $(`#scar${i}label`).remove();
+            }
+            amountOfScars = 1;
+
+            $(".markimage").remove();
+            $(".scarimage").remove();
         });
 
 
@@ -44,15 +58,23 @@ $(function () {
 
             loadFullBase(style);
             changeMark(style);
+            changeScar(style);
         });
 
-        console.log(style);
         changeMark(style);
+        changeScar(style);
 
         $("#addMarking").click(function () {
             amountOfMarks++;
             addMarkingField(amountOfMarks - 1, json.styles[style].marks);
             changeMark(style);
+            // checkAllMarks(amountOfMarks, style);
+        });
+
+        $("#addScar").click(function () {
+            amountOfScars++;
+            addScarField(amountOfScars - 1, json.styles[style].scars);
+            changeScar(style);
             // checkAllMarks(amountOfMarks, style);
         });
 
@@ -103,7 +125,27 @@ function checkAllMarks(amountOfMarks, style) {
         changeMarkingColor(`mark${i}`);
     }
 
+}
 
+function checkAllScars(amountOfScars, style) {
+    for (i = 0; i < amountOfScars; i++) {
+        let scarId = `#scar${i}`;
+
+        $(scarId).change(function () {
+            addScarImage(style, $(scarId).val(), i);
+            
+        });
+
+    }
+
+}
+
+function changeScar(style) {
+    $(".scar").change(function (obj) {
+        let scar = obj.currentTarget.id;
+
+        addScarImage(style, $(`#${scar}`).val(), scar);
+    });
 
 }
 
@@ -138,6 +180,19 @@ function addMarkingField(index, markings) {
     );
 
     fillMarkingSelect(markings, index);
+
+
+}
+
+function addScarField(index, scars) {
+    $(".scars").append(
+        `<select name="scar${index}" id="scar${index}" class="scar">
+            <option value="none">     </option>
+        </select>
+        <label for="scar${index}" id="scar${index}label">Scar ${index + 1}</label> <br></br>`
+    );
+
+    fillScarSelect(scars, index);
 
 
 }
@@ -238,7 +293,7 @@ function addMarkingImage(style, marking, index) {
     $(`#${index}img`).remove();
     if (marking != 'none') {
         $("#cat").append(
-            `<img src='art/${style}/markings/${marking}' id='${index}img' class='baseimage'>`
+            `<img src='art/${style}/markings/${marking}' id='${index}img' class='baseimage markimage'>`
         )
     }
 }
@@ -248,6 +303,25 @@ function fillMarkingSelect(markings, index) {
         let marking = markings[mark];
         let markingName = marking.split('.')[0];
         $(`#mark${index}`).append(`<option value='${marking}' class="markingOption">${markingName}</option>`)
+    }
+
+}
+
+function addScarImage(style, scar, index) {
+
+    $(`#${index}scar`).remove();
+    if (scar != 'none') {
+        $("#cat").append(
+            `<img src='art/${style}/scars/${scar}' id='${index}scar' class='baseimage scarimage'>`
+        )
+    }
+}
+
+function fillScarSelect(scars, index) {
+    for (let sc in scars) {
+        let scar = scars[sc];
+        let scarName = scar.split('.')[0];
+        $(`#scar${index}`).append(`<option value='${scar}' class="scarOption">${scarName}</option>`)
     }
 
 }
