@@ -1,13 +1,16 @@
 {
     "styles": {
         "babs": {
-            "marks": ["back.png", "heavy tabby.png", "pointoverlay.png", "backmittens.png", "underside face.png", "blaze.png", "muzzle.png", "pointoverlay.png", "sideburns.png", "socks back.png", "socks front.png", "dorsal stripe.png", "hindquarters.png", "ticked tabby.png", "undersides tabby.png", "face and neck.png", "bicolor.png", "siamese point.png", "lynx point.png", "tabby (painterly).png", "unders.png", "mackarel tabby.png", "underfeet.png", "alternative unders.png", "calico.png", "chest high.png", "chest half.png", "belly high.png", "belly half.png", "tailtip.png", "front mittens.png", "cap and saddle.png", "star.png", "locket.png", "bengal.png", "bengal underspots.png", "tortie.png", "tortie big.png", "eyeliner.png", "small mask.png", "eyebrows.png", "eartips.png", "ears.png", "muzzle (side).png", "tail rings.png", "chin.png", "cape.png", "tipped.png", "freckles.png", "sickle.png", "deerspots.png", "nosebridge.png", "smoke.png", "tail.png", "beautymark.png", "spotted tabby.png", "fading tabby.png", "classic tabby.png", "tail underside.png", "tail under high.png", "cow.png", "mask (cheetah).png", "splitface.png"]
+            "marks": ["back.png", "heavy tabby.png", "pointoverlay.png", "backmittens.png", "underside face.png", "blaze.png", "muzzle.png", "pointoverlay.png", "sideburns.png", "socks back.png", "socks front.png", "dorsal stripe.png", "hindquarters.png", "ticked tabby.png", "undersides tabby.png", "face and neck.png", "bicolor.png", "siamese point.png", "lynx point.png", "tabby (painterly).png", "unders.png", "mackarel tabby.png", "underfeet.png", "alternative unders.png", "calico.png", "chest high.png", "chest half.png", "belly high.png", "belly half.png", "tailtip.png", "front mittens.png", "cap and saddle.png", "star.png", "locket.png", "bengal.png", "bengal underspots.png", "tortie.png", "tortie big.png", "eyeliner.png", "small mask.png", "eyebrows.png", "eartips.png", "ears.png", "muzzle (side).png", "tail rings.png", "chin.png", "cape.png", "tipped.png", "freckles.png", "sickle.png", "deerspots.png", "nosebridge.png", "smoke.png", "tail.png", "beautymark.png", "spotted tabby.png", "fading tabby.png", "classic tabby.png", "tail underside.png", "tail under high.png", "cow.png", "mask (cheetah).png", "splitface.png", "noseline.png", "clouded.png", "right eyepatch.png", "left eyepatch.png"]
         },
         "ema": {
             "marks": ["eartips.png", "backmittens.png", "front mittens.png", "back feet.png", "front feet.png", "fading legs.png", "long fading legs.png", "muzzle.png", "large muzzle.png", "chin extended.png", "chin.png", "blaze.png", "eyeliner.png", "shoulder.png", "tailtip wild.png", "tailtip smooth.png", "fading tailtip.png", "locket.png", "chest.png", "big chest.png", "small chest.png", "dorsal stripe.png", "big saddle.png", "tail.png", "tabby 1.png", "tabby 2.png", "tabby 3.png", "tabby 4.png", "tabby 5.png", "spots 1.png", "spots 2.png", "spots 3.png", "calico.png", "smokey.png", "eyebrows.png", "bengal.png", "bicolor.png", "chest and frontpaws.png", "striped socks.png", "nosebridge.png"]
         },
         "bunny": {
-            "marks": []
+            "marks": ["front toes.png", "front feet.png", "front legs.png", "back toes.png", "back feet.png", "back legs.png", "blaze.png", "eyeliner.png", "ears.png", "eartips.png"]
+        },
+        "marieke": {
+            "marks": [""]
         }
     }
 }

@@ -3,7 +3,8 @@
 }
 
 #cat img {
-    width: 700px;
+    max-width: 700px;
+    max-height: 500px;
     position: absolute;
 }
 
@@ -26,6 +27,6 @@
 
 #name {
     position: absolute;
-    margin-left: 320px;
+    margin-left: 700px;
     margin-top: 70px;
 }
