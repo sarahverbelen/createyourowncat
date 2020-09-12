@@ -1,0 +1,19 @@
+Files die nodig zijn voor een base:
+
+- Lines
+- Base
+- Eyes base (both)
+- Pupils (both)
+- eye shading (both eyes) (kan ook bv. wit vlekje zijn oid)
+- Left eye base
+- Left pupil
+- inside of ears
+- ear fluff
+- skin (nose, pawpads - hangt af van wat zichtbaar is)
+
+
+allemaal png's, even groot en doorzichtig (zodat je ze op elkaar kan leggen)
+behalve de lines heeft geen enkele file line-art
+markings zijn ook aparte png's
+kleur maakt niet uit; de kleur word erop gezet in de code met een soort 'clipping mask'
+
