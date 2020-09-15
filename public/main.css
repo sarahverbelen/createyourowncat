@@ -8,16 +8,15 @@
     position: absolute;
 }
 
-#selects {
-    position: absolute;
-    margin-top: 500px;
-    margin-left: 50px;
-    z-index: 2;
-}
 
-
-
-#eyesimg, #pupilsimg, #linesimg, #fluffimg, #earsimg, #skinimg, #lefteyeimg, #leftpupilimg {
+#eyesimg,
+#pupilsimg,
+#linesimg,
+#fluffimg,
+#earsimg,
+#skinimg,
+#lefteyeimg,
+#leftpupilimg {
     z-index: 200;
 }
 
@@ -29,7 +28,11 @@
     z-index: 202;
 }
 
-#collarimg, #collarlinesimg, #collarthingimg, #bellimg, #belllinesimg {
+#collarimg,
+#collarlinesimg,
+#collarthingimg,
+#bellimg,
+#belllinesimg {
     z-index: 203;
 }
 
@@ -37,11 +40,11 @@
     z-index: 204;
 }
 
-#name {
+/* #name {
     position: absolute;
     margin-left: 700px;
     margin-top: 70px;
-}
+} */
 
 .column {
     display: inline-block;
@@ -53,63 +56,148 @@
 #mark0img {
     z-index: 1;
 }
+
 #mark1img {
     z-index: 2;
 }
+
 #mark2img {
     z-index: 3;
 }
+
 #mark3img {
     z-index: 4;
 }
+
 #mark4img {
     z-index: 5;
 }
+
 #mark5img {
     z-index: 6;
 }
+
 #mark6img {
     z-index: 7;
 }
+
 #mark7img {
     z-index: 8;
 }
+
 #mark8img {
     z-index: 9;
 }
+
 #mark9img {
     z-index: 10;
 }
+
 #mark10img {
     z-index: 11;
 }
+
 #mark11img {
     z-index: 12;
 }
+
 #mark12img {
     z-index: 13;
 }
+
 #mark13img {
     z-index: 14;
 }
+
 #mark14img {
     z-index: 15;
 }
+
 #mark15img {
     z-index: 16;
 }
+
 #mark16img {
     z-index: 17;
 }
+
 #mark17img {
     z-index: 18;
 }
+
 #mark18img {
     z-index: 19;
 }
+
 #mark19img {
     z-index: 20;
 }
+
 #mark20img {
     z-index: 21;
+}
+
+/* CSS Below by Kiki De Boer */
+
+body {
+    background-color: #A2B4A2;
+    align-content: center;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+    font-family: calibri;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.name {
+    margin-top: -40px;
+    font-size: 25px;
+    color: white;
+    font-family: calibri;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.witvlak {
+    background-color: white;
+    height: 600px;
+    width: 800px;
+    /* margin-left: 331px; */
+    margin: auto;
+    /* position: absolute; */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+#selects {
+    /* position: absolute; */
+    margin-top: 500px;
+    /* margin-left: 176px; */
+    width: 1200px;
+    margin: auto;
+    z-index: 2;
+    background-color: #5a765d;
+    padding: 30px;
+    align-content: center;
+    box-sizing: border-box;
+
+}
+
+button {
+    color: white;
+    background-color: #375537;
+    padding: 10px;
+    border: 2px #40614a solid;
+}
+
+label {
+    color: white;
+    font-family: calibri;
+    font-size: 19px;
 }
