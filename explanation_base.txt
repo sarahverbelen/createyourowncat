@@ -17,3 +17,10 @@ behalve de lines heeft geen enkele file line-art
 markings zijn ook aparte png's
 kleur maakt niet uit; de kleur word erop gezet in de code met een soort 'clipping mask'
 
+- collar base
+- collar lines
+- collar 'thing' (het grijze clip dingetje idk, mag ook ander detail zijn; word bovenop lineart geplaatst en niet herkleurd)
+- 5 hondentanden (line-art en kleur in één laag, word niet herkleurd; elke hondentand in aparte png)
+- bell base 
+- bell lines
+
