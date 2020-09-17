@@ -14,5 +14,4 @@ https://createyourowncat.web.app/
 * Babs Ernst
 * Ema
 * Marieke
-* Bunny aka Sarah Verbelen
 * CSS by Kiki De Boer

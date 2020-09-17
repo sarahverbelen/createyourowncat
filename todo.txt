@@ -1,8 +1,7 @@
-- Hexcode invullen
 - randomizer
 - verslepen van markings
 - mobile-friendly maken
-- markings houden bij switchen tussen bases???
+- tussenkopjes ('feet', 'body', 'tail',..;)
 
 
 

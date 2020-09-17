@@ -106,8 +106,21 @@ $(function () {
     changeColor('bell');
 
     changeOrder(0);
+    hexWatcher(0);
 
 });
+
+function hexWatcher(id) {
+    $(`#mark${id}hex`).val($(`#mark${id}color`).val());
+    $(`#mark${id}color`).change(function() {
+        $(`#mark${id}hex`).val($(`#mark${id}color`).val());
+    });
+
+    $(`#mark${id}color`).val($(`#mark${id}hex`).val());
+    $(`#mark${id}hex`).change(function() {
+        $(`#mark${id}color`).val($(`#mark${id}hex`).val());
+    });
+}
 
 function changeOrder(mark) {
     $(`#mark${mark}order`).val(mark);
@@ -115,7 +128,7 @@ function changeOrder(mark) {
         // $(`#mark${mark}img`).css('z-index')
         if($(`#mark${mark}img`).css('z-index') != undefined) {
             $(`#mark${mark}img`).css('z-index', $(`#mark${mark}order`).val());
-            console.log($(`#mark${mark}img`).css('z-index'));
+            // console.log($(`#mark${mark}img`).css('z-index'));
         }
 
     });
@@ -180,20 +193,20 @@ function changeMark(style) {
 
 function addMarkingField(index, markings) {
     $(".markings").append(
-        `<select name="marking${index}" id="mark${index}" class="marking">
+        `<label for="mark${index}color" id="mark${index}label">Marking ${index + 1}</label> <br class="${index}">
+        <select name="marking${index}" id="mark${index}" class="marking">
             <option value="none">     </option>
         </select>
-        <input type="color" id="mark${index}color" name="mark${index}" value="#ffffff">
-        <input type="range" min="1" max="100" value="100" class="slider" id="${index}">
-        <label for="mark${index}color" id="mark${index}label">Marking ${index + 1}</label> 
+        <input type="range" min="1" max="100" value="100" class="slider" id="${index}"> <br class="${index}">
+        <input type="color" id="mark${index}color" name="mark${index}" value="#ffffff"> <br class="${index}">
         <label for="mark${index}order" id="mark${index}label">Order:</label> <input type="number" id="mark${index}order" min="0"> <br class="${index}">
         <br class="${index}"><br class="${index}">`
     );
 
     fillMarkingSelect(markings, index);
 
-
 }
+
 
 function addScarField(index, scars) {
     $(".scars").append(

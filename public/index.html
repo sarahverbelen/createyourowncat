@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a42378b101.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="name.js"></script>
     <link rel="stylesheet" href="main.css">
@@ -13,8 +14,10 @@
 
 <body>
     <h1>Create Your Own Cat!</h1>
-    <h2 class='name'>Your warriorname is: <span id="name"></span></h2> 
-    <div class="witvlak"><div id="cat"></div></div>
+    <h2 class='name'>Your warriorname is: <span id="name"></span></h2>
+    <div class="witvlak">
+        <div id="cat"></div>
+    </div>
 
     <div id="selects">
         <div class="column">
@@ -46,13 +49,16 @@
         <div class="column">
             <h3>Markings</h3>
             <div class="markings">
+                <label for="mark0color" id="mark0label">Marking 1</label> <br class="0">
                 <select name="marking0" id="mark0" class="marking">
                     <option value="none"> </option>
                 </select>
-                <input type="color" id="mark0color" name="mark0" value="#ffffff" class='markingcolor'>
-                <input type="range" min="1" max="100" value="100" class="slider" id="0">
-                <label for="mark0color" id="mark0label">Marking 1</label> <br class="0">
-                <label for="mark0order" id="mark0label">Order:</label> <input type="number" id="mark0order" min="0"> <br class="0">
+                <br class="0">
+                <input type="color" id="mark0color" name="mark0" value="#ffffff" class='markingcolor'> <input
+                    type="text" id="mark0hex"> <br class="0">
+                <input type="range" min="1" max="100" value="100" class="slider" id="0"> <br class="0">
+                <label for="mark0order" id="mark0label">Order:</label> <input type="number" id="mark0order" min="0"> <br
+                    class="0">
                 <br class="0">
             </div>
             <button id="addMarking">Add Marking</button>
@@ -79,7 +85,7 @@
                 <input type="checkbox" id="bellShow"> <label for="bellshow">Bell</label> <br>
                 <div class="bell">
                     <input type="color" id="bell" name="bell" value="#ffffff">
-                <label for="bell">Bell Color</label> 
+                    <label for="bell">Bell Color</label>
                 </div> <br> <br>
                 <input type="number" id="teeth" name="teeth" min="0" max="5">
                 <label for="teeth">Dogteeth</label>
@@ -87,6 +93,12 @@
         </div>
     </div>
 
+    <footer>
+        <p id="copyright">Code © <a href="https://www.sarahverbelen.be">Sarah Verbelen <i class="fas fa-link"></i></a>
+            Art © <a href="http://instagram.com/fairywren.draws">Babs Ernst <i class="fas fa-link"></i></a>
+            Art © <a href="https://toyhou.se/Kattenkwaad">Marieke <i class="fas fa-link"></i></a>
+            Art © <a href="https://www.deviantart.com/sunniesfunthecupcake">Ema <i class="fas fa-link"></i></a></p>
+    </footer>
 
 </body>
 

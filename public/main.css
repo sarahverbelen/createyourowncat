@@ -1,3 +1,8 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 #cat {
     width: 700px;
 }
@@ -53,90 +58,41 @@
     vertical-align: top;
 }
 
-/* #mark0img {
-    z-index: 1;
-} */
-/* 
-#mark1img {
-    z-index: 2;
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    margin-top: 50px;
+    padding: 50px; 
+    box-sizing: border-box;
 }
 
-#mark2img {
-    z-index: 3;
+#copyright {
+    color: white;
+    font-family: sans-serif;
+    margin: auto;
+    text-align: center;
 }
 
-#mark3img {
-    z-index: 4;
+#copyright a i {
+    color: white;
+    margin-right: 20px;
+    transition: .5s;
 }
 
-#mark4img {
-    z-index: 5;
+#copyright a {
+    color: white;
+    text-decoration: none;
+    transition: .5s;
 }
 
-#mark5img {
-    z-index: 6;
+#copyright a:hover {
+    color: grey;
 }
 
-#mark6img {
-    z-index: 7;
+#copyright a i:hover {
+    color: grey;
 }
-
-#mark7img {
-    z-index: 8;
-}
-
-#mark8img {
-    z-index: 9;
-}
-
-#mark9img {
-    z-index: 10;
-}
-
-#mark10img {
-    z-index: 11;
-}
-
-#mark11img {
-    z-index: 12;
-}
-
-#mark12img {
-    z-index: 13;
-}
-
-#mark13img {
-    z-index: 14;
-}
-
-#mark14img {
-    z-index: 15;
-}
-
-#mark15img {
-    z-index: 16;
-}
-
-#mark16img {
-    z-index: 17;
-}
-
-#mark17img {
-    z-index: 18;
-}
-
-#mark18img {
-    z-index: 19;
-}
-
-#mark19img {
-    z-index: 20;
-}
-
-#mark20img {
-    z-index: 21;
-} */
-
 /* CSS Below by Kiki De Boer */
 
 body {
