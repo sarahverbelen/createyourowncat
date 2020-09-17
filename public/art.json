@@ -9,10 +9,13 @@
                 "small mask.png", "eyebrows.png", "eartips.png", "ears.png", "muzzle (side).png", "tail rings.png", "chin.png", "cape.png", "tipped.png", "freckles.png",
                 "sickle.png", "deerspots.png", "nosebridge.png", "smoke.png", "tail.png", "beautymark.png", "spotted tabby.png", "fading tabby.png", "classic tabby.png",
                 "tail underside.png", "tail under high.png", "cow.png", "mask (cheetah).png", "splitface.png", "noseline.png", "clouded.png", "right eyepatch.png",
-                "left eyepatch.png", "leg banding.png", "butt patch.png", "neck patch.png", "cheetah spots.png", "bandit.png", "big locket.png"
+                "left eyepatch.png", "leg banding.png", "butt patch.png", "neck patch.png", "cheetah spots.png", "bandit.png", "big locket.png", "soft unders.png", "saddle.png",
+                "blush.png", "soft blush.png", "forehead.png", "small blaze.png", "nose freckles.png", "gradient low.png", "gradient high.png", "eyestripes.png", "leg spotting.png",
+                "back spotting.png", "faint inverse tabby.png", "gradient right.png", "gradient left.png", "inverse spotting.png", "low highlights.png", "upper hightlights.png",
+                "inverse speckle.png", "cotton unders.png"
             ],
-            "scars": ["back.png", "shoulder.png", "left eye.png", "right eye.png", "blind eye left.png", "blind eye right.png", "back leg.png", "nosebridge.png", "left torn ear.png", "right torn ear.png", "shorthaired tail.png",
-                "shorthaired clipped tail.png", "longhaired clipped tail.png"
+            "scars": ["back.png", "shoulder.png", "left eye.png", "right eye.png", "blind eye left.png", "blind eye right.png", "back leg.png", "nosebridge.png", "left torn ear.png",
+                "right torn ear.png", "shorthaired tail.png", "shorthaired clipped tail.png", "longhaired clipped tail.png"
             ]
         },
         "ema": {

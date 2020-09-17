@@ -34,12 +34,14 @@ $(function () {
                 $(`#mark${i}color`).remove();
                 $(`#${i}`).remove();
                 $(`#mark${i}label`).remove();
+                $(`.${i}`).remove();
             }
             amountOfMarks = 1;
 
             for (let i = 1; i < amountOfScars; i++) {
                 $(`#scar${i}`).remove();
                 $(`#scar${i}label`).remove();
+                $(`.${i}`).remove();
             }
             amountOfScars = 1;
 
@@ -67,6 +69,7 @@ $(function () {
             amountOfMarks++;
             addMarkingField(amountOfMarks - 1, json.styles[style].marks);
             changeMark(style);
+            changeOrder(amountOfMarks - 1);
             // checkAllMarks(amountOfMarks, style);
         });
 
@@ -102,8 +105,21 @@ $(function () {
     changeColor('collar');
     changeColor('bell');
 
+    changeOrder(0);
 
 });
+
+function changeOrder(mark) {
+    $(`#mark${mark}order`).val(mark);
+    $(`#mark${mark}order`).change(function() {
+        // $(`#mark${mark}img`).css('z-index')
+        if($(`#mark${mark}img`).css('z-index') != undefined) {
+            $(`#mark${mark}img`).css('z-index', $(`#mark${mark}order`).val());
+            console.log($(`#mark${mark}img`).css('z-index'));
+        }
+
+    });
+}
 
 function checkAllMarks(amountOfMarks, style) {
     for (i = 0; i < amountOfMarks; i++) {
@@ -169,7 +185,9 @@ function addMarkingField(index, markings) {
         </select>
         <input type="color" id="mark${index}color" name="mark${index}" value="#ffffff">
         <input type="range" min="1" max="100" value="100" class="slider" id="${index}">
-        <label for="mark${index}color" id="mark${index}label">Marking ${index + 1}</label> <br></br>`
+        <label for="mark${index}color" id="mark${index}label">Marking ${index + 1}</label> 
+        <label for="mark${index}order" id="mark${index}label">Order:</label> <input type="number" id="mark${index}order" min="0"> <br class="${index}">
+        <br class="${index}"><br class="${index}">`
     );
 
     fillMarkingSelect(markings, index);
@@ -182,7 +200,7 @@ function addScarField(index, scars) {
         `<select name="scar${index}" id="scar${index}" class="scar">
             <option value="none">     </option>
         </select>
-        <label for="scar${index}" id="scar${index}label">Scar ${index + 1}</label> <br></br>`
+        <label for="scar${index}" id="scar${index}label">Scar ${index + 1}</label> <br class="${index}"><br class="${index}">`
     );
 
     fillScarSelect(scars, index);
@@ -379,8 +397,9 @@ function addMarkingImage(style, marking, index) {
 }
 
 function fillMarkingSelect(markings, index) {
-    for (mark in markings) {
-        let marking = markings[mark];
+    let sortedMarks = markings.sort();
+    for (mark in sortedMarks) {
+        let marking = sortedMarks[mark];
         let markingName = marking.split('.')[0];
         $(`#mark${index}`).append(`<option value='${marking}' class="markingOption">${markingName}</option>`)
     }
@@ -398,8 +417,9 @@ function addScarImage(style, scar, index) {
 }
 
 function fillScarSelect(scars, index) {
-    for (let sc in scars) {
-        let scar = scars[sc];
+    let sortedScars = scars.sort();
+    for (let sc in sortedScars) {
+        let scar = sortedScars[sc];
         let scarName = scar.split('.')[0];
         $(`#scar${index}`).append(`<option value='${scar}' class="scarOption">${scarName}</option>`)
     }
